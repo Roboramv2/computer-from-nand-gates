@@ -1,0 +1,61 @@
+/**
+ * 16-bit multiplexor: 
+ * for i = 0..15 out[i] = a[i] if sel == 0 
+ *                        b[i] if sel == 1
+ */
+
+CHIP Mux16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+    Nand(a=sel, b=sel, out=notsel);
+    Nand(a=a[0], b=notsel, out=x0);
+    Nand(a=b[0], b=sel, out=y0);
+    Nand(a=x0, b=y0, out=out[0]);
+    Nand(a=a[1], b=notsel, out=x1);
+    Nand(a=b[1], b=sel, out=y1);
+    Nand(a=x1, b=y1, out=out[1]);
+    Nand(a=a[2], b=notsel, out=x2);
+    Nand(a=b[2], b=sel, out=y2);
+    Nand(a=x2, b=y2, out=out[2]);
+    Nand(a=a[3], b=notsel, out=x3);
+    Nand(a=b[3], b=sel, out=y3);
+    Nand(a=x3, b=y3, out=out[3]);
+    Nand(a=a[4], b=notsel, out=x4);
+    Nand(a=b[4], b=sel, out=y4);
+    Nand(a=x4, b=y4, out=out[4]);
+    Nand(a=a[5], b=notsel, out=x5);
+    Nand(a=b[5], b=sel, out=y5);
+    Nand(a=x5, b=y5, out=out[5]);
+    Nand(a=a[6], b=notsel, out=x6);
+    Nand(a=b[6], b=sel, out=y6);
+    Nand(a=x6, b=y6, out=out[6]);
+    Nand(a=a[7], b=notsel, out=x7);
+    Nand(a=b[7], b=sel, out=y7);
+    Nand(a=x7, b=y7, out=out[7]);
+    Nand(a=a[8], b=notsel, out=x8);
+    Nand(a=b[8], b=sel, out=y8);
+    Nand(a=x8, b=y8, out=out[8]);
+    Nand(a=a[9], b=notsel, out=x9);
+    Nand(a=b[9], b=sel, out=y9);
+    Nand(a=x9, b=y9, out=out[9]);
+    Nand(a=a[10], b=notsel, out=x10);
+    Nand(a=b[10], b=sel, out=y10);
+    Nand(a=x10, b=y10, out=out[10]);
+    Nand(a=a[11], b=notsel, out=x11);
+    Nand(a=b[11], b=sel, out=y11);
+    Nand(a=x11, b=y11, out=out[11]);
+    Nand(a=a[12], b=notsel, out=x12);
+    Nand(a=b[12], b=sel, out=y12);
+    Nand(a=x12, b=y12, out=out[12]);
+    Nand(a=a[13], b=notsel, out=x13);
+    Nand(a=b[13], b=sel, out=y13);
+    Nand(a=x13, b=y13, out=out[13]);
+    Nand(a=a[14], b=notsel, out=x14);
+    Nand(a=b[14], b=sel, out=y14);
+    Nand(a=x14, b=y14, out=out[14]);
+    Nand(a=a[15], b=notsel, out=x15);
+    Nand(a=b[15], b=sel, out=y15);
+    Nand(a=x15, b=y15, out=out[15]);
+}
