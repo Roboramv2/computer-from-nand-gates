@@ -13,6 +13,6 @@ We can build literally all the chips needed for the computer using NAND gates al
 |-----|-----|------|
 |Elementary|not, and, or, xor, mux, demux|YES|
 |16-bit|not16, and16, or16, mux16|YES|
-|Multi-way|or8way, mux4way16, mux8way16, demux4way, demux8way|No|
+|Multi-way|or8way, mux4way16, mux8way16, demux4way, demux8way|YES|
 |ALU|half-adder, full-adder, adder16, incrementer|No|
 ***
