@@ -45,4 +45,4 @@ We write ASM programs for our assembled computer and the two available chips(scr
 
 ### Designing the assembler:
 
-![Assembly translation](https://github.com/Roboramv2/computer-from-nand-gates/blob/main/images/Binary_instructions.jpg)
+![Assembly translation](https://github.com/Roboramv2/computer-from-nand-gates/blob/main/images/Binary_instructions.JPG)
