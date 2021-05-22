@@ -1,0 +1,69 @@
+/**
+ * Memory of 8 registers, each 16 bit-wide. Out holds the value
+ * stored at the memory location specified by address. If load==1, then 
+ * the in value is loaded into the memory location specified by address 
+ * (the loaded value will be emitted to out from the next time step onward).
+ */
+
+CHIP RAM8 {
+    IN in[16], load, address[3];
+    OUT out[16];
+
+    PARTS:
+    Not(in=address[0], out=not0);
+    Not(in=address[1], out=not1);
+    Not(in=address[2], out=not2);
+
+    //register-0
+    And(a=not2, b=not1, out=mid0);
+    And(a=not0, b=mid0, out=load0mid);
+    And(a=load0mid, b=load, out=load0);
+    Register(in=in, load=load0, out=out0);
+
+    //register-1
+    And(a=not2, b=not1, out=mid1);
+    And(a=address[0], b=mid1, out=load1mid);
+    And(a=load1mid, b=load, out=load1);
+    Register(in=in, load=load1, out=out1);
+
+    //register-2
+    And(a=not2, b=address[1], out=mid2);
+    And(a=not0, b=mid2, out=load2mid);
+    And(a=load2mid, b=load, out=load2);
+    Register(in=in, load=load2, out=out2);
+
+    //register-3
+    And(a=not2, b=address[1], out=mid3);
+    And(a=address[0], b=mid3, out=load3mid);
+    And(a=load3mid, b=load, out=load3);
+    Register(in=in, load=load3, out=out3);
+
+    //register-4
+    And(a=address[2], b=not1, out=mid4);
+    And(a=not0, b=mid4, out=load4mid);
+    And(a=load4mid, b=load, out=load4);
+    Register(in=in, load=load4, out=out4);
+
+    //register-5
+    And(a=address[2], b=not1, out=mid5);
+    And(a=address[0], b=mid5, out=load5mid);
+    And(a=load5mid, b=load, out=load5);
+    Register(in=in, load=load5, out=out5);
+
+    //register-6
+    And(a=address[2], b=address[1], out=mid6);
+    And(a=not0, b=mid6, out=load6mid);
+    And(a=load6mid, b=load, out=load6);
+    Register(in=in, load=load6, out=out6);
+
+    //register-7
+    And(a=address[2], b=address[1], out=mid7);
+    And(a=address[0], b=mid7, out=load7mid);
+    And(a=load7mid, b=load, out=load7);
+    Register(in=in, load=load7, out=out7);
+
+    //selecting output
+    Mux8Way16(a=out0, b=out1, c=out2, d=out3, e=out4, f=out5, g=out6, h=out7, sel=address, out=out);
+    
+    
+}
