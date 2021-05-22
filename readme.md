@@ -23,5 +23,5 @@ We will use only the D flip-flop (clocked) for our sequential circuits.
 |Class|Chips|Tested|
 |-----|-----|------|
 |Registers|1-bit, 16-bit, counter|YES|
-|RAM|16B, 128B, 1kB, 8kB, 32kB|YES|
+|RAM|8 word, 64 word, 512 word, 4k word, 16k word|YES|
 ***
