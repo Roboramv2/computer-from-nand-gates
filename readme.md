@@ -33,8 +33,8 @@ We will use only the D flip-flop (clocked) for our sequential circuits.
 We write ASM programs for our assembled computer and the two available chips(screen and keyboard chips as discussed further below).
 |Program|Description|Tested|
 |-------|-----------|------|
-|Multiplier|Takes values from two registers (R0 and R1), performs multiplicationand stores result in next register (R2)|No|
-|Darken screen|Reads keyboard input and darkens the screen when any key is pressed, lightens it again on releasing the key|No|
+|Multiplier|Takes values from two registers (R0 and R1), performs multiplicationand stores result in next register (R2)|YES|
+|Darken screen|Reads keyboard input and darkens the screen when any key is pressed, lightens it again on releasing the key|YES|
 
 
 ### IV-Managing Input/Output:
